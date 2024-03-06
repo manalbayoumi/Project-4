@@ -20,16 +20,19 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import random
-from sklearn.metrics import balanced_accuracy_score, confusion_matrix, classification_report
+from pathlib import Path
+from sklearn.metrics import balanced_accuracy_score, confusion_matrix, classification_report, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
 import numpy as np
 import seaborn as sns
 ``` 
 ## Machine Learning Results
-**First Model**      
+**Logistic Regression Model**      
 
 1. For accuracy    
 Accuracy=(TruePositive+TrueNegative)/(TruePositive+TrueNegative+FalsePositive+FalseNegative)=(2589+22)/(2589+22+1010+11)=71.88%
@@ -37,14 +40,14 @@ Accuracy=(TruePositive+TrueNegative)/(TruePositive+TrueNegative+FalsePositive+Fa
 Percision=TruePositive/(TruePositive+FalsePositive)=2589/(2589+1010)=71.93%
 3. Recall
 recall=TruePositive/(TruePositive+FalseNegative)=2589/(2589+11)=99.57%    
-**Oversampling Data**       
+**Random Forest Model**       
 
 1. For accuracy    
-Accuracy=(TruePositive+TrueNegative)/(TruePositive+TrueNegative+FalsePositive+FalseNegative)=(2589+22)/(2589+22+1010+11)=71.88%
+Accuracy=(TruePositive+TrueNegative)/(TruePositive+TrueNegative+FalsePositive+FalseNegative)=(278+2383)/(217+2383+278+754)=73.26%
 2. For Percision
-Percision=TruePositive/(TruePositive+FalsePositive)=2589/(2589+1010)=71.93%
+Percision=TruePositive/(TruePositive+FalsePositive)=2383/(2383+754)=75.96%
 3. Recall
-recall=TruePositive/(TruePositive+FalseNegative)=2589/(2589+11)=99.57%   
+recall=TruePositive/(TruePositive+FalseNegative)=2383/(2383+217)=91.65%   
 ![matrix.PNG](matrix.PNG)
 
 ## Conclusion
