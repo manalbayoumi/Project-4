@@ -80,6 +80,5 @@ recall=TruePositive/(TruePositive+FalseNegative)=2589/(2589+11)=99.57%
 ## Conclusion
 We used logistic regression and Random Forest machine learning skill on this dataset with the default hyperparameter (500 decision trees), the accuracy is 71.88%.     
 Also, we used Grid Search CV and Random Search CV to find the best hyperparamter, especially for n_estimator and max_depth and each search takes around 90 minutes because    the dataset is huge. The dataset has 630,000 enteries. The best parameter we found was (n_estimator = 162, max_depth= 15), the accuracy level reached 74.43%.      
-In addition to that, we tried SVC, but the accuracy score was not high. I recommend using the random forest model because that model has higher accuracy, it is the best      
-classification model for machine learning. 
+In addition to that, we tried SVC, but the accuracy score was not high. I recommend using the random forest model because that model has higher accuracy, it is the best classification model for machine learning. 
 
