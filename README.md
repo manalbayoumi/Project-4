@@ -33,15 +33,23 @@ import seaborn as sns
 ``` 
 ## Machine Learning Results
 **Logistic Regression Model**      
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 1. For accuracy    
 Accuracy=(TruePositive+TrueNegative)/(TruePositive+TrueNegative+FalsePositive+FalseNegative)=(2589+22)/(2589+22+1010+11)=71.88%
 2. For Percision
 Percision=TruePositive/(TruePositive+FalsePositive)=2589/(2589+1010)=71.93%
 3. Recall
 recall=TruePositive/(TruePositive+FalseNegative)=2589/(2589+11)=99.57%    
+<<<<<<< Updated upstream
 **Random Forest Model**       
 
+=======
+
+**Random Forest Model**       
+>>>>>>> Stashed changes
 1. For accuracy    
 Accuracy=(TruePositive+TrueNegative)/(TruePositive+TrueNegative+FalsePositive+FalseNegative)=(278+2383)/(217+2383+278+754)=73.26%
 2. For Percision
@@ -50,6 +58,7 @@ Percision=TruePositive/(TruePositive+FalsePositive)=2383/(2383+754)=75.96%
 recall=TruePositive/(TruePositive+FalseNegative)=2383/(2383+217)=91.65%   
 ![matrix.PNG](matrix.PNG)
 
+<<<<<<< Updated upstream
 ## Conclusion
 The precision for the  class (0) is 100% which means the model correctly made the positive prediction everytime. The recall of that class is 99%.            
 
@@ -57,3 +66,39 @@ The precision for class (1) is not good as expected because the percision is onl
 
 On the other hand, the previous model recall is 94% and this oversampling recall model is 99%, which means this model has a higher standard because the recall is high. At the new standard, the percision is 84%. 
 I recommend using that model because that model has higher accuracy, percision, and recall as shown in the calculation for the first model and for the oversampling data.
+=======
+## Steps for using Random Forest and making Predictions: 
+## Loading and Preprocessing Encoded Data
+Using the clean data, we tested using X_train2, X_test2, y_train2, y_test2 = train_test_split(X, y, random_state=1).
+
+## Fitting the Random Forest Model
+We created a model using the RandomForestClassifier and we fitted the data using X_train2, y_train2 then we made predictions using the X_test2
+
+## Model Evaluation
+We evaluated the confusion_matrix for y_test2 and predictions using the confusion matrix
+![Capture.PNG](Capture.PNG)
+
+## Feature Importance:
+We recognized the important features in the rain forest model that are found in the X.columns and sorted them according to their importance:
+![Features.PNG](Features.PNG).
+
+## Optimizing a Random Forest Classifier Using Grid Search and Random Search:
+That is used to find the best performance for a given dataset in terms of achieving a higher accuracy level. That can be done by setting paramters for teh grid space   
+in terms of maximum depth, estimators, max features, and minimum samples. 
+1. GridSearchCV    
+Accuracy=(TruePositive+TrueNegative)/(TruePositive+TrueNegative+FalsePositive+FalseNegative)=(2589+22)/(2589+22+1010+11)=71.88%
+2. For Percision
+Percision=TruePositive/(TruePositive+FalsePositive)=2589/(2589+1010)=71.93%
+3. Recall
+recall=TruePositive/(TruePositive+FalseNegative)=2589/(2589+11)=99.57%    
+
+
+## ETL with SQLITE
+![sqlpicture](SQLCapture.PNG)
+
+## Conclusion
+We used logistic regression and Random Forest machine learning skill on this dataset with the default hyperparameter (500 decision trees), the accuracy is 71.88%.     
+Also, we used Grid Search CV and Random Search CV to find the best hyperparamter, especially for n_estimator and max_depth and each search takes around 90 minutes because    the dataset is huge. The dataset has 630,000 enteries. The best parameter we found was (n_estimator = 162, max_depth= 15), the accuracy level reached 74.43%.      
+In addition to that, we tried SVC, but the accuracy score was not high. I recommend using the random forest model because that model has higher accuracy, it is the best      
+classification model for machine learning. 
+>>>>>>> Stashed changes
